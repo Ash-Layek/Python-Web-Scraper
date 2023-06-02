@@ -54,11 +54,11 @@ class Browser:
 
         wait = WebDriverWait(self.browser, 10)
 
-        wait.until(EC.visibility_of_element_located((By.ID, "country-modal-submit")))
-
-        
+        wait.until(EC.visibility_of_element_located((By.ID, "country-modal-submit")))   # Close Popup
 
         button = self.browser.find_element(By.ID, "country-modal-submit")
+
+        button.click()
         
        
 
@@ -66,7 +66,7 @@ class Browser:
 
 
     def check_title(self):
-        product = "JAMIE LEATHER HARNESS CHELSEA BOOT"
+        product = "JAMIE LEATHER HARNESS CHELSEA BOOT"    # Check if title matches my keyword and return product availability
 
         wait = WebDriverWait(self.browser, 10)
 
@@ -91,8 +91,8 @@ class Browser:
   
        wait.until(EC.visibility_of_element_located((By.CLASS_NAME, "product-size")))
     
-       button = self.browser.find_element(By.XPATH, "//button[@data-sku-code='190665474152']")
-       is_purchasable = button.get_attribute("data-sku-purchasable")
+       button = self.browser.find_element(By.XPATH, "//button[@data-sku-code='190665474152']") #check size 8 by data-sku-code and check it's property purchasable. if it's true,
+       is_purchasable = button.get_attribute("data-sku-purchasable")                           # It sends an email to me
     
        if is_purchasable == "true":
         print("Size 8 is purchasable.")
