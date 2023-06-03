@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from email.mime.text import MIMEText
 import smtplib
-
+import datetime
 import time
 
 class Browser:
@@ -105,7 +105,7 @@ class Browser:
 
 
     def sendEmail(self):
-        message = MIMEText("The Doctor martens you want are available in Size 8")
+        message = MIMEText("The Doctor martens you want are available in Size 8")      # Send email using stmplib to start gmail server and send me an email 
         message['Subject'] = "PRODUCT AVAILABLE"
         message['From'] = "yagamikonooha@gmail.com"
         message['To'] = "achraf.layek1@gmail.com"
@@ -155,3 +155,7 @@ if __name__ == "__main__":
     # Continue with further actions on the clicked page
 
     browser.close_browser()
+
+    file  = open(r'C:\Users\ACHRAF\Projects\Python Web Scraper')
+
+    file.write(f'{datetime.datetime.now()} - Script Ran')
