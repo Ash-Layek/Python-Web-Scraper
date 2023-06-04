@@ -156,6 +156,6 @@ if __name__ == "__main__":
 
     browser.close_browser()
 
-    file  = open(r'C:\Users\ACHRAF\Projects\Python Web Scraper\log.txt')
+    file  = open(r'C:\Users\ACHRAF\Projects\Python Web Scraper\log.txt', 'a')
 
     file.write(f'{datetime.datetime.now()} - Script Ran')
